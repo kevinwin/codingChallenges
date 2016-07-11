@@ -3,7 +3,13 @@ Assume you have a mthod is Substring wich checks if one word is a substring of a
 */
 
 function isRotation(s1, s2) {
-
+  if (s1.length !== s2.length) {
+    return false;
+  }
+  if (!isSubstring(s1+s1, s2)) {
+    return false;
+  }
+  return true;
 };
 
 function isSubstring(s1, s2) {
