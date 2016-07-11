@@ -34,5 +34,9 @@ function removeDuplicates(linkedList){
 };
 
 // removeDuplicates without hash table
+// bias towards nodes towards left, if remaining list has a 2, d
+
+// sort the linked list using merge sort
+// move pointers based on adjacent node value
 
 module.exports = removeDuplicates;
