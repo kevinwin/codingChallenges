@@ -36,3 +36,17 @@ module.exports = {
   moveTower,
   Tower
 };
+
+function printMove(from, to) {
+  console.log('move from ' + from + ' to ' + to);
+}
+
+function towers(n, t1, t2, t3) {
+  if (n === 1) {
+    printMove(t1, t3);
+  } else {
+    towers(n-1, t1, t3, t2);
+    towers(1, t1, t2, t3);
+    towers(n-1, t2, t1, t3);
+  }
+}
