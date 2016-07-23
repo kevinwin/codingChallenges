@@ -13,7 +13,27 @@
   */
 
 var allAnagrams = function(string) {
-  // Your code here.
-  };
+  var result = [];
+  var unique = {};
+
+  function permute(build, remaining) {
+    if (remaining.length === 0) {
+      if (!unique[build]) {
+        unique[build] = true;
+        result.push(build);
+      }
+      return;
+    }
+
+    for (var i = 0; i < remaining.length; i++) {
+      var char = remaining[i];
+      var others = remaining.slice(0, i) + remaining.slice(i+1);
+      permute(build+char, others);
+    }
+  } 
+
+  permute('', string);
+  return result; 
+};
 
 module.exports = allAnagrams;
